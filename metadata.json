@@ -1,6 +1,0 @@
-{
-  "name": "تیم نرم‌افزاری نارون | NarvanTeam.ir",
-  "description": "وب‌سایت رسمی تیم نرم‌افزاری نارون — توسعه چابک اپلیکیشن‌های مینیمال، امن و آفلاین با Capacitor و تکنولوژی‌های وب، سازنده اپلیکیشن یاد.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
