@@ -1,1 +1,701 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تیم نرم‌افزاری نارون | NarvanTeam.ir — محصولات مینیمال، امن و کاربردی</title>
+  <meta name="description" content="وب‌سایت رسمی تیم نرم‌افزاری نارون (NarvanTeam.ir)؛ سازنده اپلیکیشن یاد (یادآور آنچه مهم است) با معماری آفلاین، حفظ کامل حریم خصوصی و توسعه چابک مبتنی بر Capacitor و وب." />
+  <meta property="og:title" content="تیم نرم‌افزاری نارون | NarvanTeam.ir" />
+  <meta property="og:description" content="ساخت اپلیکیشن‌های مینیمال، امن و کاربردی با Capacitor و تکنولوژی‌های وب. معرفی اپلیکیشن یاد و پویش رونمایی ۳۶۵ نفره." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F7F8F5;
+      --surface: #FFFFFF;
+      --surface-soft: #EEF2EC;
+      --surface-dark: #112619;
+      --text: #111C15;
+      --text-muted: #4A5A50;
+      --primary: #14532D;
+      --primary-dark: #0B321A;
+      --accent: #D97706;
+      --accent-hover: #B45309;
+      --accent-light: #FBBF24;
+      --border: #DCE2D9;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum";
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Bar (3-Zone Contract) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--border);
+      background: rgba(247, 248, 245, 0.94);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      height: 74px;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      white-space: nowrap;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 0.92rem;
+      padding: 11px 22px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.16s ease, border-color 0.16s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: #FFFFFF;
+    }
+
+    .btn-accent:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: var(--surface);
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background-color: var(--surface-soft);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 72px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .kicker {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.15rem, 3.6vw, 3.1rem);
+      font-weight: 900;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero-lead {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      max-width: 62ch;
+      margin-bottom: 32px;
+    }
+
+    .hero-lead strong {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .meta-strip {
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-showcase {
+      background: linear-gradient(155deg, #14532D 0%, #0B2616 100%);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 36px;
+      border: 1px solid #1E3F2B;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-showcase h2 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      margin: 8px 0 12px;
+    }
+
+    .hero-showcase p {
+      color: #D1FAE5;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .kpi-card:nth-child(2) .kpi-value {
+      color: var(--accent);
+    }
+
+    .kpi-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Sections */
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+      font-weight: 900;
+      line-height: 1.3;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 56ch;
+      font-size: 0.98rem;
+    }
+
+    /* Yaad Bento Layout */
+    .yaad-bento {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .sub-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--surface-soft);
+    }
+
+    .sub-features h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .sub-features p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Offline AI Simulator Box */
+    .simulator-card {
+      background: var(--surface-dark);
+      color: #FFFFFF;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid #1E3F2B;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sim-input-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .sim-input {
+      flex: 1;
+      background: #0B1910;
+      border: 1px solid #274E37;
+      color: #FFFFFF;
+      font-family: inherit;
+      font-size: 0.88rem;
+      padding: 10px 14px;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .sim-input:focus {
+      border-color: var(--accent-light);
+    }
+
+    .sim-output {
+      margin-top: 20px;
+      background: #0B1910;
+      border: 1px solid #1E3F2B;
+      border-radius: 14px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+
+    .sim-output span {
+      display: block;
+      color: #86A893;
+      margin-bottom: 2px;
+    }
+
+    .sim-output strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    /* In Development Roadmap Card */
+    .roadmap-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    /* 365 Campaign Plans */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .plan-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .plan-card.featured {
+      background: var(--surface-dark);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    .plan-price {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin: 14px 0 4px;
+    }
+
+    .plan-card.featured .plan-price {
+      color: var(--accent-light);
+    }
+
+    .plan-features {
+      list-style: none;
+      margin: 20px 0 28px;
+    }
+
+    .plan-features li {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .plan-card.featured .plan-features li {
+      color: #ECFDF5;
+    }
+
+    /* Agile Workflow 3-Col */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--surface-dark);
+      color: #D1FAE5;
+      padding: 56px 0 40px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #234832;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-light);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: #86A893;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .yaad-bento,
+      .plans-grid,
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+      .sub-features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- TOP NAVIGATION -->
+  <header>
+    <div class="container header-inner">
+      <a href="#top" class="brand">تیم نرم‌افزاری نارون</a>
+      <nav class="nav-links" aria-label="ناوبری اصلی">
+        <a href="#products">محصولات</a>
+        <a href="#campaign-365">پویش ۳۶۵</a>
+        <a href="#workflow">معماری چابک</a>
+        <a href="privacy.html">حریم خصوصی</a>
+      </nav>
+      <a href="#products" class="btn btn-accent">دانلود اپلیکیشن یاد</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker">استودیوی مهندسی نرم‌افزار · NarvanTeam.ir · توسعه چابک موبایل‌محور</p>
+            <h1>محصولات مینیمال، امن و کاربردی؛ بدون پیچیدگی‌های اضافه.</h1>
+            <p class="hero-lead">
+              ما در <strong>تیم نرم‌افزاری نارون</strong> اپلیکیشن‌های بومی و هیبریدی را با <strong>Capacitor</strong> و تکنولوژی‌های مدرن وب می‌سازیم. تمام چرخه کدنویسی، تست و انتشار ما به صورت چابک، مستقیماً از طریق مرورگر موبایل و پایپ‌لاین‌های خودکار <strong>GitHub Actions</strong> بدون نیاز به سیستم‌های سنگین انجام می‌شود.
+            </p>
+            <div class="cta-group">
+              <a href="#products" class="btn btn-accent">معرفی و دانلود اپلیکیشن «یاد»</a>
+              <a href="#campaign-365" class="btn btn-outline">مشاهده پویش رونمایی ۳۶۵ نفره</a>
+            </div>
+            <div class="meta-strip">
+              سازنده اپلیکیشن «یاد» · معماری ۱۰۰٪ آفلاین و محلی · آماده استقرار روی گیت‌هاب و لیارا
+            </div>
+          </div>
+
+          <div class="hero-showcase">
+            <div>
+              <span style="color: var(--accent-light); font-size: 0.85rem; font-weight: 700;">محصول پرچمدار · نسخه اندروید</span>
+              <h2>«یاد؛ یادآور آنچه مهم است.»</h2>
+              <p>
+                نخستین دستیار یادآوری کاملاً آفلاین با دیتابیس لوکال SQLite، پردازش زبان طبیعی فارسی روی خود دستگاه، یادآورهای مکان‌محور هوشمند و هشدارهای پس‌زمینه پایدار.
+              </p>
+            </div>
+            <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.14); display: flex; flex-wrap: wrap; gap: 12px;">
+              <a href="https://cafebazaar.ir" target="_blank" rel="noopener" class="btn btn-accent">دریافت از کافه‌بازار</a>
+              <a href="https://myket.ir" target="_blank" rel="noopener" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.25);">دریافت از مایکت</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantitative Proof Strip -->
+        <div class="kpi-grid tabular">
+          <div class="kpi-card">
+            <div class="kpi-value">۱۰۰٪ آفلاین</div>
+            <div class="kpi-label">پردازش هوش مصنوعی و ذخیره دیتابیس SQLite روی دستگاه</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">۳۶۵ حامی</div>
+            <div class="kpi-label">پویش محدود رونمایی با پلن‌های برنزی، نقره‌ای و طلایی</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">۰ سرور واسط</div>
+            <div class="kpi-label">بدون ردیابی موقعیت مکانی و بدون نیاز به حساب ابری</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">CI/CD موبایلی</div>
+            <div class="kpi-label">توسعه در مرورگر موبایل و بیلد خودکار با GitHub Actions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PRODUCTS SECTION: YAAD + IN DEVELOPMENT -->
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="kicker">۰۱. محصولات تیم نرم‌افزاری نارون</p>
+            <h2 class="section-title">اپلیکیشن «یاد»؛ یادآور آنچه مهم است.</h2>
+          </div>
+          <p class="section-desc">
+            طراحی‌شده برای کاربرانی که سرعت، سادگی و امنیت داده‌های شخصی‌شان را به سرویس‌های ابری پر از تبلیغات ترجیح می‌دهند.
+          </p>
+        </div>
+
+        <div class="yaad-bento">
+          <article class="card">
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+              نسخه پایدار ۱.۴.۰ اندروید · مبتنی بر Capacitor و SQLite بومی · ۱۰۰٪ آفلاین
+            </p>
+            <h3>۰۱. حفظ حریم خصوصی با دیتابیس لوکال و پردازش آفلاین هوش مصنوعی</h3>
+            <p style="color: var(--text-muted); font-size: 0.96rem;">
+              در «یاد»، تمامی یادآورها و یادداشت‌های شما مستقیماً در حافظه داخلی گوشی ذخیره می‌شوند. موتور تحلیل هوشمند متن فارسی بدون ارسال حتی یک بایت به اینترنت، زمان و مکان را از جملات روزمره شما استخراج می‌کند.
+            </p>
+
+            <div class="sub-features">
+              <div>
+                <h4>۰۲. یادآورهای مکان‌محور هوشمند</h4>
+                <p>ثبت هشدار بر اساس ورود یا خروج از محدوده جغرافیایی (داروخانه، محل کار، میدان شهر) با استفاده از Geofencing بومی دستگاه.</p>
+              </div>
+              <div>
+                <h4>۰۳. هشدارهای پس‌زمینه پایدار</h4>
+                <p>اجرای تضمینی زنگ و اعلان یادآور در ثانیه دقیق، حتی در صورت بسته بودن برنامه یا فعال بودن بهینه‌سازی باتری اندروید.</p>
+              </div>
+            </div>
+
+            <div style="margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 12px;">
+              <a href="https://cafebazaar.ir" target="_blank" rel="noopener" class="btn btn-primary">دانلود از کافه‌بازار</a>
+              <a href="https://myket.ir" target="_blank" rel="noopener" class="btn btn-accent">دانلود از مایکت</a>
+            </div>
+          </article>
+
+          <!-- Interactive Offline NLP Simulator -->
+          <div class="simulator-card">
+            <div>
+              <p style="font-size: 0.8rem; color: var(--accent-light); font-weight: 700; margin-bottom: 6px;">
+                تست زنده موتور پردازش آفلاین «یاد» · ترافیک سرور: ۰ بایت
+              </p>
+              <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">
+                یک جمله یادآور به فارسی بنویسید:
+              </h3>
+              <form id="sim-form" class="sim-input-row">
+                <input
+                  id="sim-text"
+                  type="text"
+                  class="sim-input"
+                  value="فردا ساعت ۱۷ نزدیک میدان ولیعصر قرص ویتامین بخرم"
+                  aria-label="متن یادآور فارسی"
+                />
+                <button type="submit" class="btn btn-accent" style="padding: 10px 16px; font-size: 0.82rem;">تحلیل</button>
+              </form>
+            </div>
+
+            <div class="sim-output">
+              <div>
+                <span>عنوان استخراج‌شده:</span>
+                <strong id="out-title">فردا ساعت ۱۷ نزدیک میدان ولیعصر قرص ویتامین بخرم</strong>
+              </div>
+              <div>
+                <span>زمان هشدار:</span>
+                <strong id="out-time" style="color: var(--accent-light);">فردا · ساعت ۱۷:۰۰</strong>
+              </div>
+              <div>
+                <span>شرط مکانی (Geofence):</span>
+                <strong id="out-loc" style="color: #6EE7B7;">نزدیک میدان ولیعصر</strong>
+              </div>
+              <div>
+                <span>موتور ذخیره‌سازی:</span>
+                <strong>SQLite Local · ۰ بایت شبکه</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Products Card -->
+        <div class="roadmap-card">
+          <div style="max-width: 680px;">
+            <p class="kicker" style="margin-bottom: 4px;">پویایی مستمر در آزمایشگاه نارون</p>
+            <h3 style="font-size: 1.4rem; font-weight: 900; margin-bottom: 6px;">در حال توسعه... (محصولات بعدی تیم نرم‌افزاری نارون)</h3>
+            <p style="color: var(--text-muted); font-size: 0.94rem;">
+              همزمان با توسعه مستمر «یاد»، دو محصول جدید با محوریت <strong>مدیریت مالی شخصی آفلاین (اپلیکیشن برگ)</strong> و <strong>پایش عادت‌های روزانه بدون سرور (اپلیکیشن نبض)</strong> در پایپ‌لاین GitHub Actions ما در حال شکل‌گیری هستند.
+            </p>
+          </div>
+          <a href="privacy.html" class="btn btn-outline">مطالعه معماری حریم خصوصی ←</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 365 LAUNCH CAMPAIGN SECTION -->
+    <section id="campaign-365" class="section" style="background: var(--surface);">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="kicker" style="color: var(--accent);">۰۲. کمپین رونمایی ۳۶۵ نفره · فرصت تکرارنشدنی</p>
+            <h2 class="section-title">به جمع ۳۶۵ حامی نخستین «یاد» بپیوندید.</h2>
+          </div>
+          <p class="section-desc">
+            به مناسبت انتشار رسمی اپلیکیشن یاد، تنها برای ۳۶۵ نفر اول (به
