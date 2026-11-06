@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حریم خصوصی و امنیت داده‌ها | تیم نرم‌افزاری نارون (NarvanTeam.ir)</title>
+  <meta name="description" content="سیاست‌نامه رسمی حریم خصوصی تیم نرم‌افزاری نارون و اپلیکیشن یاد؛ تضمین پردازش ۱۰۰٪ آفلاین، دیتابیس لوکال روی دستگاه و عدم ارسال اطلاعات به سرور." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F7F8F5;
+      --surface: #FFFFFF;
+      --surface-muted: #EEF1EC;
+      --text: #111C15;
+      --text-muted: #4A5A50;
+      --primary: #14532D;
+      --primary-dark: #0D381E;
+      --accent: #D97706;
+      --accent-hover: #B45309;
+      --border: #DCE2D9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(247, 248, 245, 0.92);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      height: 72px;
+    }
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: background 0.15s ease, transform 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-accent:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    .hero-legal {
+      padding: 64px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .kicker {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 900;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 72ch;
+    }
+    .guarantee-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .guarantee-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .guarantee-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .guarantee-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .legal-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+    .legal-section h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+    .legal-section p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-size: 0.98rem;
+    }
+    .legal-section ul {
+      padding-right: 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .legal-section li { margin-bottom: 8px; }
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 64px;
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .legal-section { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="/index.html" class="brand">تیم نرم‌افزاری نارون</a>
+      <nav class="nav-links" aria-label="ناوبری اصلی">
+        <a href="/index.html#products">محصولات</a>
+        <a href="/index.html#campaign-365">پویش ۳۶۵</a>
+        <a href="/index.html#workflow">معماری چابک</a>
+        <a href="/privacy.html">حریم خصوصی</a>
+      </nav>
+      <a href="/index.html" class="btn-accent">بازگشت به صفحه اصلی</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-legal">
+      <p class="kicker">سند حقوقی و تعهدنامه حریم خصوصی · نسخه ۱۴۰۵.۱</p>
+      <h1>حریم خصوصی در «یاد» یک تنظیم نیست؛ معماریِ پایه است.</h1>
+      <p class="lead">
+        در تیم نرم‌افزاری نارون (NarvanTeam.ir)، ما بر این باوریم که یادآورهای شخصی، موقعیت‌های مکانی و برنامه‌های روزمره شما، خصوصی‌ترین دارایی دیجیتال شما هستند. اپلیکیشن «یاد» به گونه‌ای مهندسی شده که حتی خود ما نیز به داده‌های شما دسترسی نداریم.
+      </p>
+
+      <div class="guarantee-grid">
+        <div class="guarantee-card">
+          <h3>۰۱. دیتابیس ۱۰۰٪ لوکال</h3>
+          <p>تمامی یادآورها، یادداشت‌ها و دسته‌بندی‌ها مستقیماً روی حافظه داخلی گوشی شما (SQLite محلی) ذخیره می‌شوند و هیچ سرور ابری واسطی وجود ندارد.</p>
+        </div>
+        <div class="guarantee-card">
+          <h3>۰۲. هوش مصنوعی کاملاً آفلاین</h3>
+          <p>موتور تحلیل زبان طبیعی و پیشنهاد زمان‌بندی هوشمند یاد به صورت بومی روی پردازنده موبایل شما اجرا می‌شود؛ بدون ارسال حتی یک بایت به APIهای خارجی.</p>
+        </div>
+        <div class="guarantee-card">
+          <h3>۰۳. موقعیت مکانی بدون ردیابی</h3>
+          <p>مختصات جغرافیایی یادآورهای مکان‌محور صرفاً توسط سرویس Geofencing سیستم‌عامل روی خود دستگاه بررسی شده و هرگز به بیرون از تلفن همراه مخابره نمی‌شود.</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="padding-top: 40px;">
+      <article class="legal-section">
+        <h2>۱. عدم جمع‌آوری اطلاعات شخصی و محتوایی</h2>
+        <p>
+          اپلیکیشن «یاد» برای شروع به کار نیازی به ثبت‌نام، وارد کردن شماره موبایل، ایمیل یا ساخت حساب کاربری ابری ندارد. تمام یادآورهایی که ثبت می‌کنید (اعم از متون، زمان‌ها، تکرارها و نقاط مکانی) منحصراً در فضای ذخیره‌سازی اختصاصی اپلیکیشن در سیستم‌عامل اندروید نگهداری می‌شوند.
+        </p>
+        <ul>
+          <li>هیچ‌گونه لاگ متنی از عنوان یا متن یادآورهای شما به سرورهای NarvanTeam.ir ارسال نمی‌شود.</li>
+          <li>هیچ اسکریپت تبلیغاتی، ردیاب رفتار کاربر (Tracker) یا کیت‌های تحلیل تجاری شخص ثالث در هسته اپلیکیشن وجود ندارد.</li>
+        </ul>
+      </article>
+
+      <article class="legal-section">
+        <h2>۲. نحوه عملکرد پردازش آفلاین هوش مصنوعی</h2>
+        <p>
+          زمانی که عبارتی مانند «فردا ساعت ۵ عصر نزدیک میدان ولیعصر دارو بخرم» را در اپلیکیشن یاد می‌نویسید، الگوریتم پردازش متن ما به صورت کاملاً محلی (On-Device) زمان، مکان و موضوع را استخراج می‌کند. این فرآیند در حالت پرواز (Airplane Mode) و بدون اتصال اینترنت نیز با همان سرعت و دقت کار می‌کند.
+        </p>
+      </article>
+
+      <article class="legal-section">
+        <h2>۳. مجوزهای دسترسی سیستم‌عامل (Permissions)</h2>
+        <p>اپلیکیشن یاد تنها مجوزهایی را درخواست می‌کند که مستقیماً برای اجرای وظایف خودِ کاربر روی دستگاه ضروری هستند:</p>
+        <ul>
+          <li><strong>دسترسی به موقعیت مکانی (Location / Geofencing):</strong> صرفاً در صورت فعال‌سازی «یادآور مکان‌محور» توسط کاربر، جهت تشخیص ورود یا خروج از محدوده تعیین‌شده توسط سیستم‌عامل.</li>
+          <li><strong>اجرای سرویس پس‌زمینه و اعلان دقیق (Exact Alarm &amp; Foreground Service):</strong> جهت تضمین پخش به‌موقع هشدارها حتی در صورت بسته بودن برنامه یا بهینه‌سازی باتری گوشی.</li>
+          <li><strong>دسترسی به حافظه جهت پشتیبان‌گیری محلی:</strong> فقط زمانی که کاربر به صورت دستی گزینه خروجی گرفتن از فایل پشتیبان رمزنگاری‌شده را انتخاب کند.</li>
+        </ul>
+      </article>
+
+      <article class="legal-section">
+        <h2>۴. پرداخت‌ها و پویش رونمایی ۳۶۵ نفره</h2>
+        <p>
+          فرآیند ارتقا به پلن‌های برنزی، نقره‌ای و طلایی از طریق درگاه‌های رسمی مارکت‌های معتبر ایرانی (کافه‌بازار و مایکت) انجام می‌گیرد. تیم نرم‌افزاری نارون هیچ‌گونه اطلاعات بانکی یا شماره کارت شما را دریافت یا ذخیره نمی‌کند و تنها توکن تایید خرید از سوی مارکت مربوطه اعتبارسنجی می‌شود.
+        </p>
+      </article>
+
+      <article class="legal-section">
+        <h2>۵. راه‌های ارتباطی با تیم نرم‌افزاری نارون</h2>
+        <p>
+          در صورت وجود هرگونه پرسش حقوقی یا فنی پیرامون معماری امنیتی و حریم خصوصی محصولات ما، می‌توانید از طریق درگاه‌های رسمی زیر با ما در ارتباط باشید:
+        </p>
+        <ul>
+          <li>وب‌سایت رسمی: <strong>https://NarvanTeam.ir</strong></li>
+          <li>پست الکترونیک پشتیبانی و حقوقی: <strong>privacy@narvanteam.ir</strong></li>
+          <li>مخزن و مستندات فنی: <strong>github.com/NarvanTeam</strong></li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© ۱۴۰۵ تیم نرم‌افزاری نارون (NarvanTeam.ir). تمامی حقوق محفوظ است.</span>
+      <a href="/index.html" style="color: var(--primary); font-weight: 700;">بازگشت به صفحه اصلی سایت ←</a>
+    </div>
+  </footer>
+</body>
+</html>
