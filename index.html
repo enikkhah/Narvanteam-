@@ -3,28 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تیم نرم‌افزاری نارون | NarvanTeam.ir — محصولات مینیمال، امن و کاربردی</title>
-  <meta name="description" content="وب‌سایت رسمی تیم نرم‌افزاری نارون (NarvanTeam.ir)؛ سازنده اپلیکیشن یاد (یادآور آنچه مهم است) با معماری آفلاین، حفظ کامل حریم خصوصی و توسعه چابک مبتنی بر Capacitor و وب." />
-  <meta property="og:title" content="تیم نرم‌افزاری نارون | NarvanTeam.ir" />
-  <meta property="og:description" content="ساخت اپلیکیشن‌های مینیمال، امن و کاربردی با Capacitor و تکنولوژی‌های وب. معرفی اپلیکیشن یاد و پویش رونمایی ۳۶۵ نفره." />
+  <title>تیم مهندسی و فناوری نارون | NarvanTeam.ir — نرم‌افزار، هوش مصنوعی و اینترنت اشیاء (IoT)</title>
+  <meta name="description" content="تیم فناوری نارون (NarvanTeam.ir)؛ توسعه‌دهنده راهکارهای هوشمند، نرم‌افزارهای یکپارچه موبایل و وب، مدل‌های پردازشی هوش مصنوعی و سیستم‌های اینترنت اشیاء (IoT) و سخت‌افزارهای امبدد." />
+  <meta property="og:title" content="تیم فناوری نارون | راهکارهای هوشمند؛ از نرم‌افزار تا سخت‌افزار" />
+  <meta property="og:description" content="توسعه‌دهنده نرم‌افزارهای مدرن، هوش مصنوعی لبه و محلی، و سیستم‌های اتوماسیون مبتنی بر اینترنت اشیاء (IoT)." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #F7F8F5;
+      /* Base & Minimal Canvas */
+      --bg: #F8FAF9;
       --surface: #FFFFFF;
-      --surface-soft: #EEF2EC;
-      --surface-dark: #112619;
-      --text: #111C15;
-      --text-muted: #4A5A50;
-      --primary: #14532D;
-      --primary-dark: #0B321A;
-      --accent: #D97706;
-      --accent-hover: #B45309;
-      --accent-light: #FBBF24;
-      --border: #DCE2D9;
+      --surface-soft: #F0F4F2;
+      --text: #0F1F17;
+      --text-muted: #4B6356;
+      --border: #DCE5E0;
+      
+      /* Software Pillar: Vibrant Green */
+      --green-primary: #10B981;
+      --green-dark: #059669;
+      --green-soft: #D1FAE5;
+      
+      /* AI Pillar: Indigo / Deep Purple Hue */
+      --ai-primary: #6366F1;
+      --ai-dark: #4338CA;
+      --ai-soft: #EEF2FF;
+      
+      /* IoT & Hardware Pillar: Industrial Graphite */
+      --iot-primary: #334155;
+      --iot-dark: #0F172A;
+      --iot-soft: #E2E8F0;
+      
+      /* Vibrant Accent for CTAs */
+      --accent: #F59E0B;
+      --accent-hover: #D97706;
+
+      --shadow-sm: 0 1px 3px rgba(15, 31, 23, 0.05);
+      --shadow-md: 0 8px 24px rgba(15, 31, 23, 0.07);
     }
 
     * {
@@ -41,7 +58,7 @@
       font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.75;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -62,13 +79,13 @@
       padding: 0 24px;
     }
 
-    /* Top Bar (3-Zone Contract) */
+    /* Top Navigation (3-Zone Contract) */
     header {
       position: sticky;
       top: 0;
-      z-index: 40;
+      z-index: 50;
       border-bottom: 1px solid var(--border);
-      background: rgba(247, 248, 245, 0.94);
+      background: rgba(248, 250, 249, 0.94);
       backdrop-filter: blur(10px);
     }
 
@@ -80,19 +97,44 @@
       height: 74px;
     }
 
-    .brand {
-      font-size: 1.2rem;
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--green-primary) 0%, var(--iot-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
       font-weight: 900;
-      color: var(--primary);
+      font-size: 1.15rem;
+      box-shadow: 0 2px 10px rgba(16, 185, 129, 0.28);
+    }
+
+    .brand {
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: var(--text);
       white-space: nowrap;
-      flex-shrink: 0;
+    }
+
+    .brand span {
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 0.92rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 28px;
-      font-size: 0.94rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text-muted);
     }
@@ -103,7 +145,7 @@
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--green-dark);
     }
 
     /* Buttons */
@@ -120,7 +162,7 @@
       border: 1px solid transparent;
       cursor: pointer;
       white-space: nowrap;
-      transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.16s ease, border-color 0.16s ease;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .btn:active {
@@ -130,6 +172,7 @@
     .btn-accent {
       background-color: var(--accent);
       color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
     }
 
     .btn-accent:hover {
@@ -138,59 +181,68 @@
     }
 
     .btn-primary {
-      background-color: var(--primary);
+      background-color: var(--green-primary);
       color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
     }
 
     .btn-primary:hover {
-      background-color: var(--primary-dark);
+      background-color: var(--green-dark);
       transform: translateY(-1px);
     }
 
     .btn-outline {
       background-color: var(--surface);
-      color: var(--primary);
+      color: var(--text);
       border-color: var(--border);
     }
 
     .btn-outline:hover {
-      border-color: var(--primary);
+      border-color: var(--green-primary);
       background-color: var(--surface-soft);
     }
 
-    /* Hero Section */
+    /* 1. HERO SECTION */
     .hero {
       padding: 72px 0 64px;
       border-bottom: 1px solid var(--border);
+      position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: stretch;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
     }
 
     .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 14px;
+      font-weight: 800;
+      color: var(--green-dark);
+      background: var(--green-soft);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(2.15rem, 3.6vw, 3.1rem);
+      font-size: clamp(2.15rem, 3.8vw, 3.25rem);
       font-weight: 900;
-      line-height: 1.3;
+      line-height: 1.28;
       color: var(--text);
       margin-bottom: 20px;
     }
 
     .hero-lead {
-      font-size: 1.08rem;
+      font-size: 1.12rem;
       color: var(--text-muted);
       max-width: 62ch;
       margin-bottom: 32px;
+      line-height: 1.85;
     }
 
     .hero-lead strong {
@@ -205,71 +257,74 @@
       margin-bottom: 24px;
     }
 
-    .meta-strip {
-      padding-top: 18px;
-      border-top: 1px solid var(--border);
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       font-size: 0.82rem;
+      font-weight: 700;
       color: var(--text-muted);
     }
 
-    .hero-showcase {
-      background: linear-gradient(155deg, #14532D 0%, #0B2616 100%);
-      color: #FFFFFF;
-      border-radius: 22px;
-      padding: 36px;
-      border: 1px solid #1E3F2B;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-showcase h2 {
-      font-size: 1.85rem;
-      font-weight: 900;
-      margin: 8px 0 12px;
-    }
-
-    .hero-showcase p {
-      color: #D1FAE5;
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-    }
-
-    .kpi-card {
+    .hero-tags span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 8px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
     }
 
-    .kpi-value {
-      font-size: 1.65rem;
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 4px;
+    /* Minimal Isometric Multi-Tech Vector Visual */
+    .hero-visual {
+      background: linear-gradient(145deg, #0F172A 0%, #064E3B 100%);
+      border-radius: 24px;
+      padding: 36px 30px;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 16px 36px rgba(15, 31, 23, 0.18);
+      position: relative;
+      overflow: hidden;
     }
 
-    .kpi-card:nth-child(2) .kpi-value {
-      color: var(--accent);
+    .tech-diagram {
+      width: 100%;
+      height: 300px;
+      margin: 0 auto;
     }
 
-    .kpi-label {
-      font-size: 0.82rem;
-      color: var(--text-muted);
+    /* Pulse node animations */
+    @keyframes pulseSoft {
+      0%, 100% { transform: scale(1); opacity: 0.95; }
+      50% { transform: scale(1.04); opacity: 1; }
     }
 
-    /* Sections */
+    @keyframes dashMove {
+      to { stroke-dashoffset: -40; }
+    }
+
+    .conn-line {
+      stroke: #34D399;
+      stroke-width: 2.2;
+      stroke-dasharray: 6 5;
+      animation: dashMove 2.2s linear infinite;
+    }
+
+    .conn-line-ai {
+      stroke: #818CF8;
+      stroke-width: 2.2;
+      stroke-dasharray: 6 5;
+      animation: dashMove 2.2s linear infinite;
+    }
+
+    .node-box {
+      animation: pulseSoft 4s ease-in-out infinite;
+    }
+
+    /* Section Global Styles */
     .section {
-      padding: 80px 0;
+      padding: 88px 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -278,196 +333,266 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 24px;
-      margin-bottom: 44px;
+      gap: 20px;
+      margin-bottom: 48px;
     }
 
     .section-title {
-      font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
       font-weight: 900;
+      color: var(--text);
       line-height: 1.3;
     }
 
     .section-desc {
       color: var(--text-muted);
-      max-width: 56ch;
-      font-size: 0.98rem;
-    }
-
-    /* Yaad Bento Layout */
-    .yaad-bento {
-      display: grid;
-      grid-template-columns: 7fr 5fr;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-    }
-
-    .card h3 {
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-
-    .sub-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid var(--surface-soft);
-    }
-
-    .sub-features h4 {
+      max-width: 58ch;
       font-size: 1rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 6px;
     }
 
-    .sub-features p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* Offline AI Simulator Box */
-    .simulator-card {
-      background: var(--surface-dark);
-      color: #FFFFFF;
-      border-radius: 20px;
-      padding: 28px;
-      border: 1px solid #1E3F2B;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .sim-input-row {
-      display: flex;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .sim-input {
-      flex: 1;
-      background: #0B1910;
-      border: 1px solid #274E37;
-      color: #FFFFFF;
-      font-family: inherit;
-      font-size: 0.88rem;
-      padding: 10px 14px;
-      border-radius: 10px;
-      outline: none;
-    }
-
-    .sim-input:focus {
-      border-color: var(--accent-light);
-    }
-
-    .sim-output {
-      margin-top: 20px;
-      background: #0B1910;
-      border: 1px solid #1E3F2B;
-      border-radius: 14px;
-      padding: 16px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      font-size: 0.82rem;
-    }
-
-    .sim-output span {
-      display: block;
-      color: #86A893;
-      margin-bottom: 2px;
-    }
-
-    .sim-output strong {
-      color: #FFFFFF;
-      font-weight: 700;
-    }
-
-    /* In Development Roadmap Card */
-    .roadmap-card {
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    /* 365 Campaign Plans */
-    .plans-grid {
+    /* 2. SERVICES: 3-COLUMN GRID */
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    .plan-card {
-      background: var(--bg);
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 34px 28px;
+      position: relative;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .service-card.software { border-top: 4px solid var(--green-primary); }
+    .service-card.ai { border-top: 4px solid var(--ai-primary); }
+    .service-card.iot { border-top: 4px solid var(--iot-primary); }
+
+    .service-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .service-card.software .service-icon-box {
+      background: var(--green-soft);
+      color: var(--green-dark);
+    }
+
+    .service-card.ai .service-icon-box {
+      background: var(--ai-soft);
+      color: var(--ai-primary);
+    }
+
+    .service-card.iot .service-icon-box {
+      background: var(--iot-soft);
+      color: var(--iot-dark);
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .service-tags {
+      list-style: none;
+      border-top: 1px solid var(--surface-soft);
+      padding-top: 16px;
+    }
+
+    .service-tags li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-tags li::before {
+      content: "•";
+      font-weight: bold;
+      color: var(--green-primary);
+    }
+
+    .service-card.ai .service-tags li::before { color: var(--ai-primary); }
+    .service-card.iot .service-tags li::before { color: var(--iot-dark); }
+
+    /* 3. PROJECTS & PORTFOLIO WITH FILTER TABS */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+      padding: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      width: fit-content;
+    }
+
+    .filter-btn {
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.16s ease;
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover {
+      color: var(--text);
+    }
+
+    .filter-btn.active {
+      background: var(--green-soft);
+      color: var(--green-dark);
+      font-weight: 800;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 30px 26px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: all 0.2s ease;
     }
 
-    .plan-card.featured {
-      background: var(--surface-dark);
-      color: #FFFFFF;
-      border-color: var(--primary);
+    .project-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
     }
 
-    .plan-price {
-      font-size: 1.85rem;
+    .project-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+
+    .badge-software { background: var(--green-soft); color: var(--green-dark); }
+    .badge-ai { background: var(--ai-soft); color: var(--ai-dark); }
+    .badge-iot { background: var(--iot-soft); color: var(--iot-dark); }
+    .badge-hybrid { background: #FEF3C7; color: #92400E; }
+
+    .project-card h4 {
+      font-size: 1.3rem;
       font-weight: 900;
-      color: var(--primary);
-      margin: 14px 0 4px;
+      color: var(--text);
+      margin-bottom: 8px;
     }
 
-    .plan-card.featured .plan-price {
-      color: var(--accent-light);
+    .project-card .slogan {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 12px;
     }
 
-    .plan-features {
-      list-style: none;
-      margin: 20px 0 28px;
-    }
-
-    .plan-features li {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
+    .project-card p {
+      font-size: 0.92rem;
       color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 22px;
     }
 
-    .plan-card.featured .plan-features li {
-      color: #ECFDF5;
+    .project-specs {
+      background: var(--surface-soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
     }
 
-    /* Agile Workflow 3-Col */
-    .workflow-grid {
+    .project-specs div {
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .project-specs div:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Flagship Yaad Spotlight in Projects */
+    .project-card.flagship {
+      grid-column: span 2;
+      background: linear-gradient(145deg, #FFFFFF 0%, #F4FBF7 100%);
+      border: 2px solid var(--green-primary);
+    }
+
+    /* 4. WORKFLOW & INTEGRATION SECTION */
+    .workflow-strip {
+      background: var(--iot-dark);
+      color: #FFFFFF;
+      border-radius: 24px;
+      padding: 44px 36px;
+      margin-top: 40px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 28px;
+    }
+
+    .workflow-item h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 8px;
+    }
+
+    .workflow-item p {
+      font-size: 0.88rem;
+      color: #94A3B8;
+      line-height: 1.75;
     }
 
     /* Footer */
     footer {
-      background: var(--surface-dark);
-      color: #D1FAE5;
-      padding: 56px 0 40px;
+      background: var(--iot-dark);
+      color: #CBD5E1;
+      padding: 56px 0 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .footer-top {
@@ -477,19 +602,26 @@
       align-items: center;
       gap: 24px;
       padding-bottom: 28px;
-      border-bottom: 1px solid #234832;
+      border-bottom: 1px solid #1E293B;
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
       gap: 24px;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-weight: 600;
     }
 
     .footer-links a:hover {
-      color: var(--accent-light);
+      color: var(--green-primary);
+    }
+
+    .footer-links a.privacy-link {
+      color: var(--green-primary);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 700;
     }
 
     .footer-bottom {
@@ -498,41 +630,45 @@
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 16px;
-      font-size: 0.82rem;
-      color: #86A893;
+      font-size: 0.84rem;
+      color: #64748B;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 980px) {
       .hero-grid,
-      .yaad-bento,
-      .plans-grid,
-      .workflow-grid {
+      .services-grid,
+      .projects-grid,
+      .workflow-strip {
         grid-template-columns: 1fr;
       }
-      .kpi-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .project-card.flagship {
+        grid-column: span 1;
       }
       .nav-links {
         display: none;
-      }
-      .sub-features {
-        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <!-- TOP NAVIGATION -->
+  <!-- HEADER / TOP BAR -->
   <header>
     <div class="container header-inner">
-      <a href="#top" class="brand">تیم نرم‌افزاری نارون</a>
+      <div class="brand-wrap">
+        <div class="brand-icon" aria-hidden="true">ن</div>
+        <a href="#top" class="brand">
+          تیم فناوری نارون <span>· NarvanTeam.ir</span>
+        </a>
+      </div>
+
       <nav class="nav-links" aria-label="ناوبری اصلی">
-        <a href="#products">محصولات</a>
-        <a href="#campaign-365">پویش ۳۶۵</a>
-        <a href="#workflow">معماری چابک</a>
+        <a href="#services">ستون‌های تخصص</a>
+        <a href="#projects">پورتفولیو و محصولات</a>
+        <a href="#workflow">معماری یکپارچه</a>
         <a href="privacy.html">حریم خصوصی</a>
       </nav>
-      <a href="#products" class="btn btn-accent">دانلود اپلیکیشن یاد</a>
+
+      <a href="#projects" class="btn btn-accent">محصولات و پروژه‌ها</a>
     </div>
   </header>
 
@@ -542,253 +678,308 @@
       <div class="container">
         <div class="hero-grid">
           <div>
-            <p class="kicker">استودیوی مهندسی نرم‌افزار · NarvanTeam.ir · توسعه چابک موبایل‌محور</p>
-            <h1>محصولات مینیمال، امن و کاربردی؛ بدون پیچیدگی‌های اضافه.</h1>
+            <div class="kicker">
+              <span>راهکارهای هوشمند؛ از فضای ابری تا دنیای فیزیکی</span>
+            </div>
+            <h1>راهکارهای هوشمند؛ از نرم‌افزار تا سخت‌افزار.</h1>
             <p class="hero-lead">
-              ما در <strong>تیم نرم‌افزاری نارون</strong> اپلیکیشن‌های بومی و هیبریدی را با <strong>Capacitor</strong> و تکنولوژی‌های مدرن وب می‌سازیم. تمام چرخه کدنویسی، تست و انتشار ما به صورت چابک، مستقیماً از طریق مرورگر موبایل و پایپ‌لاین‌های خودکار <strong>GitHub Actions</strong> بدون نیاز به سیستم‌های سنگین انجام می‌شود.
+              ما در <strong>تیم فناوری نارون</strong> مرز میان کد و دنیای واقعی را به هم پیوند می‌زنیم؛ توسعه‌دهنده <strong>نرم‌افزارهای یکپارچه موبایل و وب</strong>، <strong>مدل‌های پردازشی هوش مصنوعی (On-Device &amp; Edge)</strong> و <strong>سامانه‌های تعبیه‌شده اینترنت اشیاء (IoT)</strong> با حفظ بالاترین استانداردهای امنیت و حریم خصوصی.
             </p>
             <div class="cta-group">
-              <a href="#products" class="btn btn-accent">معرفی و دانلود اپلیکیشن «یاد»</a>
-              <a href="#campaign-365" class="btn btn-outline">مشاهده پویش رونمایی ۳۶۵ نفره</a>
+              <a href="#projects" class="btn btn-primary">مشاهده پروژه‌ها و پورتفولیو</a>
+              <a href="#services" class="btn btn-outline">حوزه‌های تخصصی ما</a>
             </div>
-            <div class="meta-strip">
-              سازنده اپلیکیشن «یاد» · معماری ۱۰۰٪ آفلاین و محلی · آماده استقرار روی گیت‌هاب و لیارا
+            <div class="hero-tags">
+              <span>📱 اپلیکیشن‌های موبایل (Capacitor/Web)</span>
+              <span>🧠 هوش مصنوعی محلی و آفلاین</span>
+              <span>⚡ سخت‌افزار و کنترلرهای هوشمند IoT</span>
             </div>
           </div>
 
-          <div class="hero-showcase">
+          <!-- Isometric Multi-Tech Diagram (SVG) -->
+          <div class="hero-visual">
+            <svg class="tech-diagram" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Connection Lines -->
+              <path d="M120 85 L210 150" class="conn-line" />
+              <path d="M300 85 L210 150" class="conn-line-ai" />
+              <path d="M210 150 L210 230" class="conn-line" />
+
+              <!-- Center Hub: Narvan Integration Engine -->
+              <g class="node-box" transform="translate(170, 120)">
+                <rect width="80" height="60" rx="14" fill="#065F46" stroke="#34D399" stroke-width="2" />
+                <circle cx="40" cy="24" r="8" fill="#10B981" />
+                <text x="40" y="47" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="sans-serif">هسته نارون</text>
+              </g>
+
+              <!-- Node 1: Mobile / Web Software (Top Left) -->
+              <g transform="translate(60, 45)">
+                <rect width="90" height="65" rx="12" fill="#047857" stroke="#6EE7B7" stroke-width="1.5" />
+                <rect x="25" y="10" width="40" height="25" rx="5" fill="#064E3B" stroke="#A7F3D0" />
+                <circle cx="45" cy="40" r="3" fill="#34D399" />
+                <text x="45" y="55" text-anchor="middle" fill="#E6FFFA" font-size="10" font-weight="bold" font-family="sans-serif">نرم‌افزار و اپ</text>
+              </g>
+
+              <!-- Node 2: Artificial Intelligence & Edge AI (Top Right) -->
+              <g transform="translate(265, 45)">
+                <rect width="95" height="65" rx="12" fill="#3730A3" stroke="#A5B4FC" stroke-width="1.5" />
+                <circle cx="35" cy="22" r="5" fill="#818CF8" />
+                <circle cx="60" cy="22" r="5" fill="#818CF8" />
+                <circle cx="47" cy="35" r="5" fill="#C7D2FE" />
+                <line x1="35" y1="22" x2="60" y2="22" stroke="#818CF8" />
+                <line x1="35" y1="22" x2="47" y2="35" stroke="#818CF8" />
+                <line x1="60" y1="22" x2="47" y2="35" stroke="#818CF8" />
+                <text x="47" y="55" text-anchor="middle" fill="#EEF2FF" font-size="10" font-weight="bold" font-family="sans-serif">هوش مصنوعی</text>
+              </g>
+
+              <!-- Node 3: IoT / Sensors / Microcontroller (Bottom) -->
+              <g transform="translate(160, 215)">
+                <rect width="100" height="65" rx="12" fill="#1E293B" stroke="#94A3B8" stroke-width="1.5" />
+                <!-- Microchip Pins -->
+                <rect x="30" y="12" width="40" height="28" rx="4" fill="#0F172A" stroke="#38BDF8" stroke-width="1.2" />
+                <circle cx="38" cy="26" r="3" fill="#38BDF8" />
+                <circle cx="62" cy="26" r="3" fill="#34D399" />
+                <text x="50" y="55" text-anchor="middle" fill="#F8FAFC" font-size="10" font-weight="bold" font-family="sans-serif">اینترنت اشیاء (IoT)</text>
+              </g>
+            </svg>
+            <div style="text-align: center; font-size: 0.82rem; color: #94A3B8; margin-top: 4px;">
+              هم‌گرایی یکپارچه نرم‌افزار، هوش مصنوعی لبه و سخت‌افزارهای امبدد
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SERVICES SECTION (3-COLUMN SPECIALTY GRID) -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="kicker">ستون‌های سه‌گانه تخصص نارون</span>
+            <h2 class="section-title">توانمندی‌های مهندسی از ایده تا اجرا</h2>
+          </div>
+          <p class="section-desc">
+            ما پروژه‌ها را به صورت ماژولار و مقیاس‌پذیر طراحی می‌کنیم؛ چه یک اپلیکیشن مستقل موبایل باشد و چه یک سامانه توزیع‌شده با سنسورهای فیزیکی و تحلیل بلادرنگ داده‌ها.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Column 1: Software Development -->
+          <article class="service-card software">
             <div>
-              <span style="color: var(--accent-light); font-size: 0.85rem; font-weight: 700;">محصول پرچمدار · نسخه اندروید</span>
-              <h2>«یاد؛ یادآور آنچه مهم است.»</h2>
+              <div class="service-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                  <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+              </div>
+              <h3>۰۱. توسعه نرم‌افزار</h3>
               <p>
-                نخستین دستیار یادآوری کاملاً آفلاین با دیتابیس لوکال SQLite، پردازش زبان طبیعی فارسی روی خود دستگاه، یادآورهای مکان‌محور هوشمند و هشدارهای پس‌زمینه پایدار.
+                طراحی و پیاده‌سازی اپلیکیشن‌های موبایل کراس‌پلتفرم، سامانه‌های تحت وب و داشبوردهای چابک با تمرکز بر سرعت، مصرف بهینه منابع و حریم خصوصی کاربر.
               </p>
             </div>
-            <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.14); display: flex; flex-wrap: wrap; gap: 12px;">
-              <a href="https://cafebazaar.ir" target="_blank" rel="noopener" class="btn btn-accent">دریافت از کافه‌بازار</a>
-              <a href="https://myket.ir" target="_blank" rel="noopener" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.25);">دریافت از مایکت</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quantitative Proof Strip -->
-        <div class="kpi-grid tabular">
-          <div class="kpi-card">
-            <div class="kpi-value">۱۰۰٪ آفلاین</div>
-            <div class="kpi-label">پردازش هوش مصنوعی و ذخیره دیتابیس SQLite روی دستگاه</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-value">۳۶۵ حامی</div>
-            <div class="kpi-label">پویش محدود رونمایی با پلن‌های برنزی، نقره‌ای و طلایی</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-value">۰ سرور واسط</div>
-            <div class="kpi-label">بدون ردیابی موقعیت مکانی و بدون نیاز به حساب ابری</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-value">CI/CD موبایلی</div>
-            <div class="kpi-label">توسعه در مرورگر موبایل و بیلد خودکار با GitHub Actions</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. PRODUCTS SECTION: YAAD + IN DEVELOPMENT -->
-    <section id="products" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <p class="kicker">۰۱. محصولات تیم نرم‌افزاری نارون</p>
-            <h2 class="section-title">اپلیکیشن «یاد»؛ یادآور آنچه مهم است.</h2>
-          </div>
-          <p class="section-desc">
-            طراحی‌شده برای کاربرانی که سرعت، سادگی و امنیت داده‌های شخصی‌شان را به سرویس‌های ابری پر از تبلیغات ترجیح می‌دهند.
-          </p>
-        </div>
-
-        <div class="yaad-bento">
-          <article class="card">
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
-              نسخه پایدار ۱.۴.۰ اندروید · مبتنی بر Capacitor و SQLite بومی · ۱۰۰٪ آفلاین
-            </p>
-            <h3>۰۱. حفظ حریم خصوصی با دیتابیس لوکال و پردازش آفلاین هوش مصنوعی</h3>
-            <p style="color: var(--text-muted); font-size: 0.96rem;">
-              در «یاد»، تمامی یادآورها و یادداشت‌های شما مستقیماً در حافظه داخلی گوشی ذخیره می‌شوند. موتور تحلیل هوشمند متن فارسی بدون ارسال حتی یک بایت به اینترنت، زمان و مکان را از جملات روزمره شما استخراج می‌کند.
-            </p>
-
-            <div class="sub-features">
-              <div>
-                <h4>۰۲. یادآورهای مکان‌محور هوشمند</h4>
-                <p>ثبت هشدار بر اساس ورود یا خروج از محدوده جغرافیایی (داروخانه، محل کار، میدان شهر) با استفاده از Geofencing بومی دستگاه.</p>
-              </div>
-              <div>
-                <h4>۰۳. هشدارهای پس‌زمینه پایدار</h4>
-                <p>اجرای تضمینی زنگ و اعلان یادآور در ثانیه دقیق، حتی در صورت بسته بودن برنامه یا فعال بودن بهینه‌سازی باتری اندروید.</p>
-              </div>
-            </div>
-
-            <div style="margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 12px;">
-              <a href="https://cafebazaar.ir" target="_blank" rel="noopener" class="btn btn-primary">دانلود از کافه‌بازار</a>
-              <a href="https://myket.ir" target="_blank" rel="noopener" class="btn btn-accent">دانلود از مایکت</a>
-            </div>
+            <ul class="service-tags">
+              <li>اپلیکیشن‌های هیبریدی و بومی مبتنی بر Capacitor و وب</li>
+              <li>معماری محلی و ذخیره‌سازی ایزوله On-Device (SQLite)</li>
+              <li>پایپ‌لاین خودکار CI/CD با GitHub Actions و توسعه موبایلی</li>
+            </ul>
           </article>
 
-          <!-- Interactive Offline NLP Simulator -->
-          <div class="simulator-card">
+          <!-- Column 2: Artificial Intelligence -->
+          <article class="service-card ai">
             <div>
-              <p style="font-size: 0.8rem; color: var(--accent-light); font-weight: 700; margin-bottom: 6px;">
-                تست زنده موتور پردازش آفلاین «یاد» · ترافیک سرور: ۰ بایت
+              <div class="service-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z"/>
+                  <path d="M18 10v2a6 6 0 0 1-12 0v-2"/>
+                  <line x1="12" y1="18" x2="12" y2="22"/>
+                  <line x1="8" y1="22" x2="16" y2="22"/>
+                </svg>
+              </div>
+              <h3>۰۲. هوش مصنوعی</h3>
+              <p>
+                پیاده‌سازی مدل‌های پردازش زبان، استخراج الگوها، خودکارسازی فرآیندهای کسب‌وکار و اجرای الگوریتم‌های هوش مصنوعی سبک روی لبه (Edge &amp; Offline AI).
               </p>
-              <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">
-                یک جمله یادآور به فارسی بنویسید:
-              </h3>
-              <form id="sim-form" class="sim-input-row">
-                <input
-                  id="sim-text"
-                  type="text"
-                  class="sim-input"
-                  value="فردا ساعت ۱۷ نزدیک میدان ولیعصر قرص ویتامین بخرم"
-                  aria-label="متن یادآور فارسی"
-                />
-                <button type="submit" class="btn btn-accent" style="padding: 10px 16px; font-size: 0.82rem;">تحلیل</button>
-              </form>
             </div>
+            <ul class="service-tags">
+              <li>پردازش زبان طبیعی فارسی به صورت کاملاً آفلاین</li>
+              <li>استخراج خودکار رویدادها، زمان‌بندی و دسته‌بندی هوشمند داده‌ها</li>
+              <li>یکپارچه‌سازی مدل‌های مدرن زبانی در ابزارهای روزمره و صنعتی</li>
+            </ul>
+          </article>
 
-            <div class="sim-output">
-              <div>
-                <span>عنوان استخراج‌شده:</span>
-                <strong id="out-title">فردا ساعت ۱۷ نزدیک میدان ولیعصر قرص ویتامین بخرم</strong>
+          <!-- Column 3: IoT & Embedded Hardware -->
+          <article class="service-card iot">
+            <div>
+              <div class="service-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2"/>
+                  <rect x="9" y="9" width="6" height="6"/>
+                  <line x1="9" y1="1" x2="9" y2="4"/>
+                  <line x1="15" y1="1" x2="15" y2="4"/>
+                  <line x1="9" y1="20" x2="9" y2="23"/>
+                  <line x1="15" y1="20" x2="15" y2="23"/>
+                  <line x1="20" y1="9" x2="23" y2="9"/>
+                  <line x1="20" y1="14" x2="23" y2="14"/>
+                  <line x1="1" y1="9" x2="4" y2="9"/>
+                  <line x1="1" y1="14" x2="4" y2="14"/>
+                </svg>
               </div>
-              <div>
-                <span>زمان هشدار:</span>
-                <strong id="out-time" style="color: var(--accent-light);">فردا · ساعت ۱۷:۰۰</strong>
-              </div>
-              <div>
-                <span>شرط مکانی (Geofence):</span>
-                <strong id="out-loc" style="color: #6EE7B7;">نزدیک میدان ولیعصر</strong>
-              </div>
-              <div>
-                <span>موتور ذخیره‌سازی:</span>
-                <strong>SQLite Local · ۰ بایت شبکه</strong>
-              </div>
+              <h3>۰۳. اینترنت اشیاء (IoT)</h3>
+              <p>
+                طراحی سیستم‌های تعبیه‌شده (Embedded Systems)، اتوماسیون مبتنی بر میکروکنترلرها، کنترل تجهیزات از راه دور از طریق بسترهای GSM/SMS/LoRa و هوشمندسازی محیط.
+              </p>
             </div>
-          </div>
-        </div>
-
-        <!-- Future Products Card -->
-        <div class="roadmap-card">
-          <div style="max-width: 680px;">
-            <p class="kicker" style="margin-bottom: 4px;">پویایی مستمر در آزمایشگاه نارون</p>
-            <h3 style="font-size: 1.4rem; font-weight: 900; margin-bottom: 6px;">در حال توسعه... (محصولات بعدی تیم نرم‌افزاری نارون)</h3>
-            <p style="color: var(--text-muted); font-size: 0.94rem;">
-              همزمان با توسعه مستمر «یاد»، دو محصول جدید با محوریت <strong>مدیریت مالی شخصی آفلاین (اپلیکیشن برگ)</strong> و <strong>پایش عادت‌های روزانه بدون سرور (اپلیکیشن نبض)</strong> در پایپ‌لاین GitHub Actions ما در حال شکل‌گیری هستند.
-            </p>
-          </div>
-          <a href="privacy.html" class="btn btn-outline">مطالعه معماری حریم خصوصی ←</a>
+            <ul class="service-tags">
+              <li>کنترلرهای پیامکی و اینترنتی پمپ‌ها، شیرهای برقی و رله‌ها</li>
+              <li>پایش بلادرنگ سنسورهای محیطی (دما، رطوبت، فشار، سطح مایعات)</li>
+              <li>اتصال امن سخت‌افزار به داشبوردهای مانیتورینگ تحت وب و موبایل</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 3. 365 LAUNCH CAMPAIGN SECTION -->
-    <section id="campaign-365" class="section" style="background: var(--surface);">
+    <!-- 3. PROJECTS & PRODUCTS PORTFOLIO (WITH CATEGORY FILTER) -->
+    <section id="projects" class="section" style="background: var(--surface);">
       <div class="container">
         <div class="section-header">
           <div>
-            <p class="kicker" style="color: var(--accent);">۰۲. کمپین رونمایی ۳۶۵ نفره · فرصت تکرارنشدنی</p>
-            <h2 class="section-title">به جمع ۳۶۵ حامی نخستین «یاد» بپیوندید.</h2>
+            <span class="kicker">پورتفولیو و محصولات</span>
+            <h2 class="section-title">نمونه محصولات و پروژه‌های اجراشده</h2>
           </div>
           <p class="section-desc">
-            به مناسبت انتشار رسمی اپلیکیشن یاد، تنها برای ۳۶۵ نفر اول (به تعداد روزهای یک سال)، امکان تهیه اشتراک و لایسنس مادام‌العمر با تعرفه حمایتی تکرارنشدنی در سه سطح برنزی، نقره‌ای و طلایی فراهم شده است.
+            پروژه‌های ما در سه دسته نرم‌افزار، سخت‌افزار/IoT و سامانه‌های ترکیبی تقسیم‌بندی شده‌اند. با کلیک بر روی دکمه‌های زیر فیلتر کنید:
           </p>
         </div>
 
-        <div class="plans-grid">
-          <!-- Bronze Plan -->
-          <div class="plan-card">
-            <div>
-              <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">ظرفیت کل: ۱۵۰ نفر</p>
-              <h3 style="font-size: 1.3rem; font-weight: 900; margin-top: 6px;">پلن برنزی (حامی آغازین)</h3>
-              <div class="plan-price tabular">۱۴۹,۰۰۰ تومان</div>
-              <p style="font-size: 0.82rem; color: var(--text-muted);">اشتراک ۱ ساله کامل + تمدید با تعرفه ثابت</p>
-              <ul class="plan-features">
-                <li>✓ یادآورهای زمان‌محور و تکرارهای هوشمند نامحدود</li>
-                <li>✓ دیتابیس لوکال SQLite با رمزنگاری کامل روی دستگاه</li>
-                <li>✓ پردازش آفلاین متن فارسی برای ثبت سریع یادآور</li>
-                <li>✓ هشدارهای پس‌زمینه پایدار بدون وابستگی به اینترنت</li>
-              </ul>
-            </div>
-            <a href="https://cafebazaar.ir" target="_blank" rel="noopener" class="btn btn-outline">انتخاب پلن برنزی</a>
-          </div>
-
-          <!-- Silver Plan (Featured) -->
-          <div class="plan-card featured">
-            <div>
-              <p style="font-size: 0.8rem; color: var(--accent-light); font-weight: 700;">پیشنهاد ویژه · ظرفیت: ۱۴۰ نفر</p>
-              <h3 style="font-size: 1.3rem; font-weight: 900; margin-top: 6px;">پلن نقره‌ای (حامی پیشرو)</h3>
-              <div class="plan-price tabular">۲۸۹,۰۰۰ تومان</div>
-              <p style="font-size: 0.82rem; color: #A7F3D0;">لایسنس مادام‌العمر نسخه ۱ و ۲ + اولویت بروزرسانی</p>
-              <ul class="plan-features">
-                <li>✓ تمام امکانات پلن برنزی بدون محدودیت زمانی</li>
-                <li>✓ یادآورهای مکان‌محور نامحدود (Geofencing)</li>
-                <li>✓ پشتیبان‌گیری آفلاین رمزنگاری‌شده با کلید شخصی کاربر</li>
-                <li>✓ نشان افتخاری «حامی ۳۶۵» در شناسنامه اپلیکیشن یاد</li>
-              </ul>
-            </div>
-            <a href="https://cafebazaar.ir" target="_blank" rel="noopener" class="btn btn-accent">انتخاب پلن نقره‌ای</a>
-          </div>
-
-          <!-- Gold Plan -->
-          <div class="plan-card">
-            <div>
-              <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">ظرفیت محدود: ۷۵ نفر</p>
-              <h3 style="font-size: 1.3rem; font-weight: 900; margin-top: 6px;">پلن طلایی (حامی بنیان‌گذار)</h3>
-              <div class="plan-price tabular">۴۹۰,۰۰۰ تومان</div>
-              <p style="font-size: 0.82rem; color: var(--text-muted);">لایسنس مادام‌العمر تمام نسخه‌ها + هدیه محصولات بعدی</p>
-              <ul class="plan-features">
-                <li>✓ دسترسی مادام‌العمر به تمام قابلیت‌های فعلی و آینده یاد</li>
-                <li>✓ ۳۰٪ تخفیف دائمی روی محصولات آینده تیم نارون</li>
-                <li>✓ عضویت در حلقه تصمیم‌گیری و رای‌دهی به ویژگی‌های جدید</li>
-                <li>✓ ثبت نام در بخش حامیان بنیان‌گذار NarvanTeam.ir</li>
-              </ul>
-            </div>
-            <a href="https://myket.ir" target="_blank" rel="noopener" class="btn btn-outline">انتخاب پلن طلایی</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. AGILE WORKFLOW SECTION -->
-    <section id="workflow" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <p class="kicker">۰۳. درباره ما و سبک کاری نارون</p>
-            <h2 class="section-title">مهندسی چابک از مرورگر موبایل؛ بدون سیستم‌های سنگین.</h2>
-          </div>
-          <p class="section-desc">
-            ما با حذف ابزارهای سنگین سنتی و تکیه بر اتوماسیون ابری، سرعت ایده تا انتشار را به چند دقیقه رسانده‌ایم.
-          </p>
+        <!-- Interactive Category Filter Bar -->
+        <div class="filter-bar" role="tablist">
+          <button class="filter-btn active" onclick="filterProjects('all', this)">همه پروژه‌ها</button>
+          <button class="filter-btn" onclick="filterProjects('software', this)">نرم‌افزار و اپلیکیشن</button>
+          <button class="filter-btn" onclick="filterProjects('ai', this)">هوش مصنوعی</button>
+          <button class="filter-btn" onclick="filterProjects('iot', this)">اینترنت اشیاء و سخت‌افزار</button>
+          <button class="filter-btn" onclick="filterProjects('hybrid', this)">ترکیبی (AI + IoT)</button>
         </div>
 
-        <div class="workflow-grid">
-          <article class="card">
-            <h3>۰۱. توسعه مستقیم در مرورگر موبایل</h3>
-            <p style="color: var(--text-muted); font-size: 0.94rem;">
-              نوشتن کد، طراحی رابط کاربری مینیمال و بازبینی ماژول‌ها مستقیماً از طریق مرورگر موبایل انجام می‌شود تا محصول از لحظه اول با دیدگاه موبایل‌محور شکل بگیرد.
-            </p>
+        <div class="projects-grid">
+          <!-- Flagship Project: Yaad App (Software + Offline AI) -->
+          <article class="project-card flagship" data-category="software ai">
+            <div>
+              <span class="project-badge badge-software">محصول پرچمدار · نرم‌افزار و هوش مصنوعی</span>
+              <h4>اپلیکیشن اندرویدی «یاد»</h4>
+              <p class="slogan">«یاد؛ یادآور آنچه مهم است.»</p>
+              <p>
+                نخستین دستیار یادآوری کاملاً آفلاین با دیتابیس لوکال SQLite و پردازش زبان طبیعی فارسی روی خود پردازنده گوشی. بدون نیاز به اتصال به اینترنت، بدون ساخت حساب کاربری و با تضمین عدم ارسال حتی ۱ بایت دیتا به سرور.
+              </p>
+
+              <div class="project-specs">
+                <div><span>فناوری هسته:</span><strong>Capacitor + SQLite Local + On-Device NLP</strong></div>
+                <div><span>حریم خصوصی:</span><strong>۱۰۰٪ محلی (بدون دسترسی به داده‌های حساس)</strong></div>
+                <div><span>پلتفرم‌ها:</span><strong>اندروید (کافه‌بازار و مایکت)</strong></div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+              <a href="https://cafebazaar.ir" target="_blank" rel="noopener" class="btn btn-primary">دریافت از کافه‌بازار</a>
+              <a href="https://myket.ir" target="_blank" rel="noopener" class="btn btn-outline">دریافت از مایکت</a>
+              <a href="privacy.html" class="btn btn-outline" style="margin-right: auto;">مطالعه تعهد حریم خصوصی ←</a>
+            </div>
           </article>
-          <article class="card">
-            <h3>۰۲. هسته هیبریدی Capacitor و وب</h3>
-            <p style="color: var(--text-muted); font-size: 0.94rem;">
-              ترکیب انعطاف‌پذیری استانداردهای مدرن وب با دسترسی عمیق به قابلیت‌های بومی اندروید (سنسور مکانی، سرویس پس‌زمینه پایدار و دیتابیس محلی SQLite).
-            </p>
+
+          <!-- IoT Card 1: GSM Smart Controller -->
+          <article class="project-card" data-category="iot">
+            <div>
+              <span class="project-badge badge-iot">سخت‌افزار و IoT</span>
+              <h4>سامانه کنترل پیامکی و اینترنتی تجهیزات</h4>
+              <p class="slogan">کنترل پایدار از فواصل نامحدود</p>
+              <p>
+                کنترلر سخت‌افزاری صنعتی مبتنی بر میکروکنترلر و ماژول‌های ارتباطی GSM/SMS برای مدیریت و راه‌اندازی پمپ‌های آب، شیرهای برقی، موتورخانه‌ها و سیستم‌های روشنایی بدون وابستگی به خطوط اینترنت کابلی.
+              </p>
+
+              <div class="project-specs">
+                <div><span>بستر ارتباطی:</span><strong>GSM / SMS / بستر همراه</strong></div>
+                <div><span>سخت‌افزار:</span><strong>بردهای امبدد صنعتی + رله‌های ایزوله</strong></div>
+                <div><span>کاربرد:</span><strong>باغ‌ها، کارگاه‌ها و زمین‌های کشاورزی</strong></div>
+              </div>
+            </div>
+
+            <span class="btn btn-outline" style="cursor: default; font-size: 0.82rem; background: var(--surface-soft);">سامانه عملیاتی و مستقر</span>
           </article>
-          <article class="card">
-            <h3>۰۳. اتوماسیون کامل با GitHub Actions</h3>
-            <p style="color: var(--text-muted); font-size: 0.94rem;">
-              با هر Git Push از روی موبایل، پایپ‌لاین‌های GitHub Actions به صورت خودکار تست‌ها را اجرا کرده، خروجی APK/AAB امضاشده را تولید می‌کنند و سایت را روی گیت‌هاب و لیارا مستقر می‌سازند.
-            </p>
+
+          <!-- IoT Card 2: Environmental Sensor Monitor -->
+          <article class="project-card" data-category="iot">
+            <div>
+              <span class="project-badge badge-iot">سخت‌افزار و IoT</span>
+              <h4>پایشگر بلادرنگ سنسورهای صنعتی</h4>
+              <p class="slogan">داده‌های دقیق از خط تولید و انبار</p>
+              <p>
+                نودهای سنسور کم‌مصرف جهت ثبت پیوسته دما، رطوبت، فشار و پارامترهای حیاتی محیطی با قابلیت ارسال هشدارهای آنی در صورت بروز خطا یا عبور از آستانه‌های بحرانی.
+              </p>
+
+              <div class="project-specs">
+                <div><span>سنسورها:</span><strong>دما، رطوبت دقیق صنعتی، گاز و جریان</strong></div>
+                <div><span>امنیت ارتباط:</span><strong>انتقال داده با پروتکل رمزنگاری‌شده</strong></div>
+                <div><span>قابلیت‌ها:</span><strong>پایش پیوسته بدون وقفه (24/7)</strong></div>
+              </div>
+            </div>
+
+            <span class="btn btn-outline" style="cursor: default; font-size: 0.82rem; background: var(--surface-soft);">در حال بهره‌برداری</span>
           </article>
+
+          <!-- Hybrid Card 1: Smart Edge Telemetry Dashboard (IoT + AI + Software) -->
+          <article class="project-card" data-category="hybrid ai iot software">
+            <div>
+              <span class="project-badge badge-hybrid">پروژه ترکیبی · نرم‌افزار + AI + سخت‌افزار</span>
+              <h4>داشبورد هوشمند تحلیل داده‌های تله‌متری</h4>
+              <p class="slogan">ترکیب سنسورهای محیطی با هوش مصنوعی</p>
+              <p>
+                سامانه یکپارچه‌ای که داده‌های سنسورهای سخت‌افزاری فیزیکی را در یک داشبورد مدرن وب و موبایل تجمیع کرده و با بهره‌گیری از الگوریتم‌های هوش مصنوعی، خطاهای احتمالی تجهیزات را پیش‌بینی می‌کند.
+              </p>
+
+              <div class="project-specs">
+                <div><span>فرانت‌اند:</span><strong>وب اپلیکیشن پیشرو (PWA/Responsive)</strong></div>
+                <div><span>تحلیل داده:</span><strong>الگوریتم‌های پیش‌بینی خرابی (Predictive)</strong></div>
+                <div><span>ورودی دیتا:</span><strong>نودهای سخت‌افزاری متصل به سنسورها</strong></div>
+              </div>
+            </div>
+
+            <span class="btn btn-outline" style="cursor: default; font-size: 0.82rem; background: var(--surface-soft);">پلتفرم یکپارچه نارون</span>
+          </article>
+
+          <!-- Software Project 2: Barg App (In Dev) -->
+          <article class="project-card" data-category="software">
+            <div>
+              <span class="project-badge badge-software">نرم‌افزار در حال توسعه</span>
+              <h4>اپلیکیشن «برگ»</h4>
+              <p class="slogan">حسابداری و بودجه‌بندی شخصی ۱۰۰٪ آفلاین</p>
+              <p>
+                مدیریت هزینه و سرمایه فردی بدون نیاز به اتصال به حساب‌های بانکی و بدون سرور واسط. کلیه پردازش‌های محاسباتی و گزارش‌های آماری به شکل آفلاین در دستگاه شما باقی می‌ماند.
+              </p>
+
+              <div class="project-specs">
+                <div><span>معماری:</span><strong>Local Database Engine</strong></div>
+                <div><span>وضعیت:</span><strong>مرحله پایانی توسعه چابک</strong></div>
+              </div>
+            </div>
+
+            <span class="btn btn-outline" style="cursor: default; font-size: 0.82rem; background: var(--surface-soft);">بزودی در مایکت و بازار</span>
+          </article>
+        </div>
+
+        <!-- 4. WORKFLOW: CLOUD TO PHYSICAL INTEGRATION -->
+        <div id="workflow" class="workflow-strip">
+          <div class="workflow-item">
+            <h4>۰۱. چرخه توسعه چابک</h4>
+            <p>توسعه و بازبینی کدها به صورت سبک، ماژولار و مبتنی بر اتوماسیون پیوسته با GitHub Actions جهت تسریع تحویل پروژه‌ها.</p>
+          </div>
+          <div class="workflow-item">
+            <h4>۰۲. هوش مصنوعی بدون وابستگی</h4>
+            <p>تمرکز ویژه بر پردازش محلی (Edge Computing) برای حفظ سرعت بالا و رعایت نهایت حریم خصوصی بدون تحمیل هزینه‌های سنگین سرور ابری.</p>
+          </div>
+          <div class="workflow-item">
+            <h4>۰۳. پیوند پایدار با سخت‌افزار</h4>
+            <p>طراحی بردهای صنعتی با قابلیت تحمل نوسانات، پایش خطوط قدرت، و اجرای فرامین الکترومکانیکی در سخت‌ترین شرایط محیطی.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -799,58 +990,49 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <strong style="font-size: 1.15rem; color: #FFFFFF;">تیم نرم‌افزاری نارون · NarvanTeam.ir</strong>
-          <p style="font-size: 0.85rem; color: #A7F3D0; margin-top: 4px;">
-            توسعه چابک اپلیکیشن‌های مینیمال، امن و کاربردی با Capacitor و تکنولوژی‌های وب.
+          <strong style="font-size: 1.2rem; color: #FFFFFF;">تیم فناوری و مهندسی نارون · NarvanTeam.ir</strong>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-top: 6px;">
+            توسعه‌دهنده نرم‌افزارهای مدرن، هوش مصنوعی لبه و سامانه‌های اینترنت اشیاء (IoT).
           </p>
         </div>
         <div class="footer-links">
-          <a href="#products">اپلیکیشن یاد</a>
-          <a href="#campaign-365">پویش ۳۶۵ نفره</a>
-          <a href="privacy.html">حریم خصوصی</a>
+          <a href="#services">حوزه‌های تخصص</a>
+          <a href="#projects">پورتفولیو و پروژه‌ها</a>
+          <a href="privacy.html" class="privacy-link">حریم خصوصی (privacy.html)</a>
           <a href="mailto:info@narvanteam.ir">info@narvanteam.ir</a>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <span>© ۱۴۰۵ تمامی حقوق برای تیم نرم‌افزاری نارون (NarvanTeam.ir) محفوظ است.</span>
-        <span>میزبان کد و استقرار: GitHub Pages &amp; Liara</span>
+        <span>© ۱۴۰۵ تمامی حقوق برای تیم فناوری نارون (NarvanTeam.ir) محفوظ است.</span>
+        <span>میزبان استاتیک مخزن: GitHub Pages &amp; Liara</span>
       </div>
     </div>
   </footer>
 
+  <!-- Filter Script for Projects -->
   <script>
-    // شبیه‌ساز سبک پردازش آفلاین زبان طبیعی فارسی در مرورگر
-    (function () {
-      var form = document.getElementById('sim-form');
-      var input = document.getElementById('sim-text');
-      var outTitle = document.getElementById('out-title');
-      var outTime = document.getElementById('out-time');
-      var outLoc = document.getElementById('out-loc');
-      var persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-
-      function toFa(str) {
-        return String(str).replace(/\d/g, function (d) { return persianDigits[Number(d)] || d; });
+    function filterProjects(category, buttonEl) {
+      // Update active button
+      var buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      if (buttonEl) {
+        buttonEl.classList.add('active');
       }
 
-      if (form && input) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var val = input.value.trim() || 'یادآور بدون عنوان';
-          outTitle.textContent = val;
-
-          var timeStr = 'امروز · ساعت ۲۰:۰۰';
-          if (val.indexOf('فردا') !== -1) {
-            timeStr = 'فردا · ساعت ۱۷:۰۰';
-          } else if (val.indexOf('هر روز') !== -1) {
-            timeStr = 'تکرار روزانه · ساعت ۰۸:۳۰';
-          }
-          outTime.textContent = toFa(timeStr);
-
-          var locMatch = val.match(/(?:نزدیک|محدوده|میدان|داروخانه|شرکت|دفتر)\s+([^\s،.]+(?:\s+[^\s،.]+)?)/);
-          outLoc.textContent = locMatch ? locMatch[0] : 'بدون محدودیت مکانی';
-        });
-      }
-    })();
+      // Filter project cards
+      var cards = document.querySelectorAll('.project-card');
+      cards.forEach(function(card) {
+        var cardCats = card.getAttribute('data-category') || '';
+        if (category === 'all' || cardCats.indexOf(category) !== -1) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
   </script>
 </body>
 </html>
