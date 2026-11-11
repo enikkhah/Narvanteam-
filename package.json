@@ -1,9 +1,0 @@
-{
-  "name": "narvanteam-static-portfolio",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "echo 'Static HTML site - No server needed'",
-    "start": "echo 'Static HTML site - No server needed'"
-  }
-}
