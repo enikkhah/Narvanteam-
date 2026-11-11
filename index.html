@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تیم فناوری نارون | Narvan Team</title>
+    <style>
+        :root {
+            --primary-green: #10B981; /* سبز شاداب */
+            --accent-amber: #F3A332; /* کهربایی نارون */
+            --bg-light: #F9FAFB;
+            --text-dark: #1F2937;
+            --text-gray: #4B5563;
+        }
+        body {
+            font-family: Tahoma, 'Segoe UI', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-container img {
+            max-width: 120px;
+            height: auto;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, #ffffff 0%, #e6f7ef 100%);
+        }
+        .hero h1 {
+            color: var(--primary-green);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 4rem 5%;
+            justify-content: center;
+        }
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-green);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        /* واترمارک لوگو در پس زمینه کارت ها */
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('logo.svg'); /* فرض بر وجود لوگو در روت */
+            background-size: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        .service-card h3, .service-card p {
+            position: relative;
+            z-index: 1;
+        }
+        .service-card h3 {
+            color: var(--text-dark);
+            margin-top: 0;
+        }
+        /* رنگ متمایز برای ستون های سخت افزار و AI */
+        .card-ai { border-bottom-color: #8B5CF6; }
+        .card-iot { border-bottom-color: #4B5563; }
+        
+        .projects {
+            padding: 4rem 5%;
+            background-color: white;
+            text-align: center;
+        }
+        .project-card {
+            display: inline-block;
+            background: var(--bg-light);
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            border: 2px solid var(--accent-amber);
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-amber);
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--text-dark);
+            color: white;
+        }
+        footer a {
+            color: var(--primary-green);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <!-- اگر لوگو با فرمت png است، کلمه svg را به png در خط زیر تغییر دهید -->
+            <img src="logo.svg" alt="لوگو تیم فناوری نارون" onerror="this.src='logo.png'; this.onerror=null;">
+        </div>
+        <nav>
+            <span style="color: var(--text-gray); font-weight: bold;">تیم فناوری نارون</span>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>راهکارهای هوشمند؛ از فضای ابری تا دنیای فیزیکی</h1>
+        <p>توسعه‌دهنده نرم‌افزارهای یکپارچه، مدل‌های پیشرفته هوش مصنوعی و سیستم‌های مبتنی بر اینترنت اشیاء (IoT) برای رفع چالش‌های مدرن.</p>
+    </section>
+
+    <section id="services" class="services">
+        <div class="service-card">
+            <h3>توسعه نرم‌افزار</h3>
+            <p>طراحی و پیاده‌سازی اپلیکیشن‌های موبایل و سامانه‌های تحت وب با تمرکز بر رابط کاربری مینیمال و عملکرد بالا.</p>
+        </div>
+        <div class="service-card card-ai">
+            <h3>هوش مصنوعی (AI)</h3>
+            <p>خودکارسازی فرآیندها، پردازش داده‌ها و یکپارچه‌سازی ابزارهای هوش مصنوعی برای ارتقای هوشمندی کسب‌وکارها.</p>
+        </div>
+        <div class="service-card card-iot">
+            <h3>اینترنت اشیاء (IoT)</h3>
+            <p>طراحی سیستم‌های نهفته، کنترلرهای هوشمند محیطی و اتوماسیون مبتنی بر میکروکنترلرها و ماژول‌های ارتباطی.</p>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2 style="margin-bottom: 2rem;">محصولات ما</h2>
+        <a href="#" class="project-card">
+            اپلیکیشن یاد؛ یادآور آنچه مهم است
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 تیم فناوری نارون. تمامی حقوق محفوظ است.</p>
+        <div>
+            <a href="/privacy.html">حریم خصوصی</a>
+        </div>
+    </footer>
+
+</body>
+</html>
